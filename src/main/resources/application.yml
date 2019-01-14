@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    contextPath: /api
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+# none — เป็นค่าเริ่มต้นที่ไม่มีการเปลี่ยนแปลงฐานข้อมูล
+# update — Hibernate จะเปลี่ยนโครงสร้างฐานข้อมูลให้ตรงกับ Entity
+# create — จะสร้างฐานข้อมูลใหม่ทุกครั้ง แต่จะไม่ drop เมื่อปิดการเชื่อมต่อ
+# create-drop — จะสร้างฐานข้อมูลและ drop ทุกครั้งเมื่อ SessionFactory ปิด
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/calllog_dev
+    username: postgres
+    password: password
+
+  security:
+    user:
+      name: calllog
+      password: P@ssw0rd

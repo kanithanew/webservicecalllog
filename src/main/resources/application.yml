@@ -13,9 +13,9 @@ spring:
 # create-drop — จะสร้างฐานข้อมูลและ drop ทุกครั้งเมื่อ SessionFactory ปิด
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/calllog_dev
+    url: jdbc:postgresql://10.156.0.216:5432/gfmiscalllog_DEV
     username: postgres
-    password: password
+    password: postgres
 
   security:
     user:

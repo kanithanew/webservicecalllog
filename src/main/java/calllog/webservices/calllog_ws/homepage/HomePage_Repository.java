@@ -21,7 +21,7 @@ public interface HomePage_Repository extends JpaRepository<HomePage, Long>, JpaS
 
   String GET_USER_PROFILE = "SELECT * FROM gfmis_staff a LEFT JOIN gfmis_m_callposition b ON a.callposition = b.callpositionid WHERE a.calllogin = ?1";
 
-  String GET_HOMEPAGE = "SELECT alldate.* FROM (select d.callid,d.touser,d.fromuser,g.modulename,g.submodulename,d.payunit,d.create_date,d.update_date,e.callusername,d.logprocess FROM ( select a.callid,a.callmodule,a.callsubmodule,a.payunit,a.create_date,a.update_date,b.touser,b.FROMuser,b.logprocess , "+
+  String GET_HOMEPAGE = "SELECT alldate.* FROM (select d.callid,d.touser,d.fromuser,g.modulename,g.submodulename,d.payunit,d.create_date,d.update_date,e.callusername,d.logprocess,d.status  FROM ( select a.callid,a.callmodule,a.callsubmodule,a.payunit,a.create_date,a.update_date,b.touser,b.FROMuser,b.logprocess , "+
        "CASE   "+
        "WHEN  a.helpdeskOwner is null and (b.touser='Update' or b.touser='Create' or  b.touser='Edit' ) THEN'OpenCall'  "+
        "WHEN  b.touser ='Helpdesk' THEN 'NewCall'   WHEN  b.touser ='HD158' THEN 'MyInbox'  "+

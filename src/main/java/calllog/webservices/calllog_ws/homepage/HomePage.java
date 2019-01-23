@@ -20,5 +20,6 @@ public class HomePage {
    private String update_date;
    private String  callusername;
    private String  logprocess;
+   private String status; 
 
 	}

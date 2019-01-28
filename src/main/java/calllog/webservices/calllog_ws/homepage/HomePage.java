@@ -16,8 +16,7 @@ public class HomePage {
    private String  modulename;
    private String  submodulename;
    private String  payunit;
-   private String create_date;
-   private String update_date;
+   private String calldate;
    private String  callusername;
    private String  logprocess;
    private String status; 

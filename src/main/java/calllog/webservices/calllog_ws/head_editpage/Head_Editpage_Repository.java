@@ -20,7 +20,7 @@ public interface Head_Editpage_Repository
    *
    */
 
-  String GET_HEAD_EDITPAGE = "SELECT a.callid,a.namecontact,a.telcontact,a.create_date,a.problem,b.modulename,c.submodulename, "+
+  String GET_HEAD_EDITPAGE = "SELECT a.callid,a.namecontact,a.telcontact,a.calldate,a.problem,b.modulename,c.submodulename, "+
   " CASE   "+
   "   WHEN a.callstatus LIKE'Close%'THEN'Close'ELSE'Pending' "+
   "END as "+
@@ -34,9 +34,9 @@ public interface Head_Editpage_Repository
   " c "+
   " ON a.callmodule=c.moduleid and a.callsubmodule=c.submoduleid  "+
   " WHERE a.payunit=?1 "+
-  " AND a.create_date>( "+
-    "  SELECT current_date+interval'543 year'-interval'3 month') "+
-    "  ORDER BY a.callid " ;
+  " AND a.calldate>( "+
+    "  SELECT current_date-interval'3 month') "+
+    "  ORDER BY a.callid DESC" ;
 
     @Query(value = GET_HEAD_EDITPAGE, nativeQuery = true)
     Collection<Head_Editpage> findHead_Editpage(String payunit);

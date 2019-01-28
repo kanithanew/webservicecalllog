@@ -13,7 +13,7 @@ public class Head_Editpage {
   private String callid;
   private String namecontact;
   private String telcontact;
-  private String create_date;
+  private String calldate;
   private String problem;
   private String modulename;
   private String submodulename;

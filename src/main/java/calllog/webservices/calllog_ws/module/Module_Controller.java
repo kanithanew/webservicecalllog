@@ -17,7 +17,7 @@ public class Module_Controller {
     @Autowired
     Module_Service  module_Service;
 
-    @GetMapping(params = "module")
+    @GetMapping()
     public List<Module> getHomePage() {
         return module_Service.retrieveModule();
 

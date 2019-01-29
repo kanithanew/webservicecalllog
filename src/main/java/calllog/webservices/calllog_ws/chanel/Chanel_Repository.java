@@ -1,4 +1,4 @@
-package calllog.webservices.calllog_ws.submodule;
+package calllog.webservices.calllog_ws.chanel;
 
 import org.springframework.data.repository.CrudRepository;
 import org.jboss.logging.Param;
@@ -12,16 +12,16 @@ import java.util.List;
 
 import java.util.List;
 
-public interface Submodule_Repository
-        extends JpaRepository<Submodule, Long>, JpaSpecificationExecutor<Submodule> {
+public interface Chanel_Repository
+        extends JpaRepository<Chanel, Long>, JpaSpecificationExecutor<Chanel> {
     // Login Check Username and Password
  
     /**
    *
    */
 
-  String GET_SUBMODULE="select submoduleid,submodulename from module_enable where moduleid=?1 order by submoduleid";
-    @Query(value = GET_SUBMODULE, nativeQuery = true)
-    Collection<Submodule> findpayunit(Integer submodule);
+  String GET_CHANEL = "select chanelid,chaneldesc from gfmis_m_chanel order by chanelid" ;
+   @Query(value = GET_CHANEL, nativeQuery = true)
+    Collection<Chanel> findchanel();
 
 }

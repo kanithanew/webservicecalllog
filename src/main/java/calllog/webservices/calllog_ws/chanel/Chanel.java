@@ -1,4 +1,4 @@
-package calllog.webservices.calllog_ws.submodule;
+package calllog.webservices.calllog_ws.chanel;
 import lombok.Data;
 
 import java.text.DateFormat;
@@ -8,9 +8,9 @@ import javax.persistence.Id;
 
 @Data
 @Entity
-public class Submodule {
+public class Chanel {
   @Id
  
-  private String submoduleid;
-  private String submodulename;
+  private String chanelid;
+  private String chaneldesc;
 	}

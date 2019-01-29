@@ -1,4 +1,4 @@
-package calllog.webservices.calllog_ws.payunit;
+package calllog.webservices.calllog_ws.problemtype;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,15 +11,15 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/payunit")
-public class Payunit_Controller {
+@RequestMapping("/problemtype")
+public class Problemtype_Controller {
 
     @Autowired
-    Payunit_Service  payunit_Service;
+    Problemtype_Service  problemtype_Service;
 
-    @GetMapping(params = "payunit")
-    public List<Payunit> getPayUnit(@RequestParam(value = "payunit") String payunit) {
-        return payunit_Service.retrievePayunit(payunit);
+    @GetMapping()
+    public List<Problemtype> getProblemtype() {
+        return problemtype_Service.retrieveProblemtype();
 
     }
 }

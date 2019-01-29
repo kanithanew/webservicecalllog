@@ -12,14 +12,14 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/submodule")
-public class SubModule_Controller {
+public class Submodule_Controller {
 
     @Autowired
-    SubModule_Service  submodule_Service;
+    Submodule_Service  submodule_Service;
 
     @GetMapping(params = "moduleid")
-    public List<SubModule> getSubModule(@RequestParam(value = "moduleid") String moduleid) {
-        return submodule_Service.retrieveSubModule(moduleid);
+    public List<Submodule> getSubmodule(@RequestParam(value = "moduleid") Integer submodule) {
+        return submodule_Service.retrieveSubmodul(submodule);
 
     }
 }

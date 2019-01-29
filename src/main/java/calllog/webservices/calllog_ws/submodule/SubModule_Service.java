@@ -6,18 +6,16 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 import javax.management.loading.ClassLoaderRepository;
-
-import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 @Service
-public class SubModule_Service {
-    private SubModule_Repository submodule_repository;
+public class Submodule_Service {
+    private Submodule_Repository submodule_repository;
 
     @Autowired
-    public SubModule_Service(SubModule_Repository repository) {
+    public Submodule_Service(Submodule_Repository repository) {
         this.submodule_repository = repository;
     }
-    public List<SubModule> retrieveSubModule(String moduleid) { 
-        return (List<SubModule>) submodule_repository.findsubmodule(moduleid);
+    public List<Submodule> retrieveSubmodul(Integer moduleid) { 
+        return (List<Submodule>) submodule_repository.findpayunit(moduleid);
     }
 
 }

@@ -1,4 +1,4 @@
-package calllog.webservices.calllog_ws.submodule;
+package calllog.webservices.calllog_ws.force;
 
 import org.springframework.data.repository.CrudRepository;
 import org.jboss.logging.Param;
@@ -12,16 +12,16 @@ import java.util.List;
 
 import java.util.List;
 
-public interface Submodule_Repository
-        extends JpaRepository<Submodule, Long>, JpaSpecificationExecutor<Submodule> {
+public interface Force_Repository
+        extends JpaRepository<Force, Long>, JpaSpecificationExecutor<Force> {
     // Login Check Username and Password
  
     /**
    *
    */
 
-  String GET_SUBMODULE="select submoduleid,submodulename from module_enable where moduleid=?1 order by submoduleid";
-    @Query(value = GET_SUBMODULE, nativeQuery = true)
-    Collection<Submodule> findpayunit(Integer submodule);
+  String GET_FORCE = "select forceid,forcedesc from gfmis_m_force  order by forceid" ;
+   @Query(value = GET_FORCE, nativeQuery = true)
+    Collection<Force> findforce();
 
 }

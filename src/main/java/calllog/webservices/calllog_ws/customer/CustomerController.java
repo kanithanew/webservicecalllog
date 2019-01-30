@@ -26,7 +26,7 @@ public class CustomerController {
     @GetMapping("/{id}")
     public ResponseEntity<?> getCustomer(@PathVariable Long id) {
         Optional<Customer> customer = customerService.retrieveCustomer(id);
-        if(!customer.isPresent()) {
+        if (!customer.isPresent()) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok(customer);
@@ -38,15 +38,23 @@ public class CustomerController {
     }
 
     @PostMapping()
-    public ResponseEntity<?> postCustomer(@Valid @RequestBody Customer body) {
-        Customer customer = customerService.createCustomer(body);
-        return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+    /*
+     * public ResponseEntity<?> postCustomer(@Valid @RequestBody Customer body) {
+     * Customer customer = customerService.createCustomer(body); 
+     * return
+     * ResponseEntity.status(HttpStatus.CREATED).body(customer); }
+     */
+    public ResponseEntity<Customer> postCustomer(@RequestBody Customer body) {
+
+         Customer customer = customerService.createCustomer(body); 
+      return ResponseEntity.status(HttpStatus.CREATED).body(customer);
+   
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<?> putCustomer(@PathVariable Long id, @Valid @RequestBody Customer body) {
         Optional<Customer> customer = customerService.updateCustomer(id, body);
-        if(!customer.isPresent()) {
+        if (!customer.isPresent()) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok().build();
@@ -54,7 +62,7 @@ public class CustomerController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteCustomer(@PathVariable Long id) {
-        if(!customerService.deleteCustomer(id)) {
+        if (!customerService.deleteCustomer(id)) {
             return ResponseEntity.notFound().build();
         }
         return ResponseEntity.ok().build();

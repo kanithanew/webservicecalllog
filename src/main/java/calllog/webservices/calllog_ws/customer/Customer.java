@@ -17,7 +17,8 @@ import javax.validation.constraints.Size;
 public class Customer {
     
     @Id
-   // @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @NotNull
     private int id;
 
     @NotNull

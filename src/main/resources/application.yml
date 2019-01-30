@@ -17,6 +17,10 @@ spring:
     username: postgres
     password: postgres
 
+   # url: jdbc:postgresql://localhost:5432/calllog_dev
+    #username: postgres
+   # password: password
+
   security:
     user:
       name: calllog

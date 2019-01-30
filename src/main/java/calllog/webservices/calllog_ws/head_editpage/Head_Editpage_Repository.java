@@ -27,10 +27,10 @@ public interface Head_Editpage_Repository
   "  callstatus FROM "+
   "  gfmis_calllog a "+
   "LEFT JOIN "+
-  " gfmis_m_modulecalllog b "+
+  " gfmis_m_module b "+
   "ON a.callmodule=b.moduleid "+
   "LEFT "+
-  "  JOIN gfmis_m_submodulecalllog "+
+  "  JOIN gfmis_m_submodule "+
   " c "+
   " ON a.callmodule=c.moduleid and a.callsubmodule=c.submoduleid  "+
   " WHERE a.payunit=?1 "+

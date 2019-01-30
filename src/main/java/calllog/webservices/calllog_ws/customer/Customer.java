@@ -15,9 +15,10 @@ import javax.validation.constraints.Size;
 @Data
 @Entity
 public class Customer {
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+   // @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
     @NotNull
     @Size(min = 2, max = 50, message = "Please provide first size between 2 - 100")
@@ -34,6 +35,6 @@ public class Customer {
     @Email(message = "Please provide valid email address")
     private String email;
 
-	public void setId(Long id2) {
+	public void setId(Object object) {
 	}
-	}
+}

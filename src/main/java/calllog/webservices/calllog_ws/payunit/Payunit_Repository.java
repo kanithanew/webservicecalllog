@@ -20,8 +20,7 @@ public interface Payunit_Repository
    *
    */
 
-  String GET_PAYUNIT = "select payunit,payunit_name,department_name,ministry_name from province_relations where payunit=?1" ;
-
+    String GET_PAYUNIT = "select payunit,payunit_name,department_name,ministry_name from province_relations where payunit=?1" ;
     @Query(value = GET_PAYUNIT, nativeQuery = true)
     Collection<Payunit> findpayunit(String payunit);
 
